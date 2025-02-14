@@ -9,39 +9,40 @@ const email = document.getElementById("email");
 
 // function to get data
 function get_data() {
-  const data_desc = {
-    d_name: Username.value,
-    d_password: password.value,
-    d_email: email.value,
+  const data = {
+    name: Username.value,
+    password: password.value,
+    email: email.value,
   };
-  if (!vaildate(data_desc.d_name, data_desc.d_password, data_desc.d_email)) {
+  if (!vaildate(data.name, data.password, data.email)) {
     return;
   }
-  list.push(data_desc);
+  list.push(data);
   localStorage.setItem("form_list", JSON.stringify(list));
-  clear(data_desc.d_name, data_desc.d_password, data_desc.d_email);
+  clear(data.name, data.password, data.email);
   alert("Successful registration");
+  window.location.href = "index.html";
 }
 
-// to reset the function
+
 function clear(cl_name, cl_email, cl_password) {
   cl_name = null;
   cl_email = null;
   cl_password = null;
 }
 
-//function to vaildate the data with regex
-function vaildate(U_name, password, e_mail) {
-  if (!U_name || !password || !e_mail) {
+
+function vaildate(username, password, email) {
+  if (!username || !password || !email) {
     alert("please fill the form");
     return false;
   }
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  if (emailRegex.test(e_mail) === false) {
+  if (emailRegex.test(email) === false) {
     alert("please write a valid email");
     return false;
   } else {
-    return e_mail;
+    return email;
   }
 }
 
@@ -52,32 +53,29 @@ const password_login = document.getElementById("password");
 
 Username_in_login = localStorage.getItem("logged_in_user");
 
-//function to get inputs form user
+
 
 function get_data_log() {
-  const log_desc = {
+  const login_data = {
     l_password: password_login.value,
     l_email: email_login.value,
   };
-  inputs.push(log_desc);
+  inputs.push(login_data);
 
-  // vaildate //
-
-  // if the user fill the form wrong
-  if (!log_desc.l_email || !log_desc.l_password) {
+  
+  if (!login_data.l_email || !login_data.l_password) {
     alert("Please fill out the form correctly");
     return;
   }
-  //regex for email
-  if (!vaildate_regex_login(log_desc.l_email)) {
+
+  if (!vaildate_regex_login(login_data.l_email)) {
     return;
   }
-  // Find the user in the list with arrow func
-  const user = list.find((user) => user.d_email === log_desc.l_email);
+
+  const user = list.find((user) => user.email === login_data.l_email);
   if (user) {
-    // Validate password
-    if (user.d_password === log_desc.l_password) {
-      localStorage.setItem("logged_in_user", user.d_name);
+    if (user.password === login_data.l_password) {
+      localStorage.setItem("logged_in_user", user.name);
 
       console.log("donee");
 
@@ -90,14 +88,14 @@ function get_data_log() {
   }
 }
 
-//vaildate function for the regex from login
-function vaildate_regex_login(L_e_mail) {
+
+function vaildate_regex_login(L_email) {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  if (emailRegex.test(L_e_mail) === false) {
+  if (emailRegex.test(L_email) === false) {
     alert("please write a valid email");
     return false;
   } else {
-    return L_e_mail;
+    return L_email;
   }
 }
 
