@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="box text-center w-60 mt-5 m-auto p-5">
+      <h1>Smart Login System</h1>
+      <div class="d-flex flex-column gap-3">
+        <input
+          type="email"
+          id="email"
+          class="form-control bg-transparent"
+          placeholder="Enter your email"
+        />
+        <input
+          type="password"
+          id="password"
+          class="form-control bg-transparent"
+          placeholder="Enter your password"
+        />
+        <button
+          type="button"
+          onclick="get_data_log();"
+          class="btn mt-3 btn-primary w-100"
+        >
+          Login
+        </button>
+        <p>Don’t have an account? <a href="signup.html">Sign Up</a></p>
+      </div>
+    </div>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>

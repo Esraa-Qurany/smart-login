@@ -1,0 +1,44 @@
+body {
+  background-color: #24353f;
+  color: white;
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+}
+.box {
+  background-color: #24353f;
+  box-shadow: 5px 2px 40px -10px black;
+}
+.w-60 {
+  width: 60%;
+}
+h1 {
+  color: #14a2b8;
+  margin-bottom: 20px;
+}
+.btn-primary {
+  background-color: transparent;
+  border-color: #14a2b8;
+  color: #14a2b8;
+}
+.btn-primary:hover {
+  background-color: #14a2b8;
+  border-color: #14a2b8;
+  color: white;
+}
+.form-control::placeholder {
+  color: rgba(255, 255, 255, 0.559);
+}
+.form-control:focus {
+  box-shadow: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  text-decoration: underline;
+}
+@media screen and (max-width: 576px) {
+  .w-60 {
+    width: 65%;
+  }
+}

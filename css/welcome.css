@@ -1,0 +1,23 @@
+body {
+  background-color: #24353f;
+  color: white;
+  font-family: "Edu AU VIC WA NT Hand", cursive;
+}
+nav {
+  background-color: #24353f;
+  box-shadow: 5px 2px 40px -10px black;
+}
+.box {
+  background-color: #24353f;
+  box-shadow: 5px 2px 40px -10px black;
+  color: #14a2b8;
+}
+.btn-warning {
+  background-color: transparent;
+}
+.my-6 {
+  margin-top: 200px;
+}
+.w-65 {
+  width: 65%;
+}
